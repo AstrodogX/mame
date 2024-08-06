@@ -618,7 +618,8 @@ void mame_ui_manager::display_startup_screens(bool first_time)
 			draw_text_box(container, warning_text, ui::text_layout::text_justify::LEFT, 0.5f, 0.5f, warning_color);
 
 			if (machine().ui_input().pressed(IPT_UI_QUIT)) {
-				request_quit();
+				machine().schedule_exit();
+				return HANDLER_CANCEL;
 			}
 //			else if (machine().ui_input().pressed(IPT_UI_CANCEL))
 //			{
@@ -1549,7 +1550,7 @@ uint32_t mame_ui_manager::handler_ingame(render_container &container)
 	if (ui_disabled)
 		return 0;
 
-	if (machine().ui_input().pressed(IPT_UI_CANCEL))
+	if (machine().ui_input().pressed(IPT_UI_QUIT))
 	{
 		request_quit();
 		return 0;
@@ -1558,6 +1559,9 @@ uint32_t mame_ui_manager::handler_ingame(render_container &container)
 	// turn on menus if requested
 	if (machine().ui_input().pressed(IPT_UI_MENU))
 	{
+		if (is_paused == false) {
+			machine().pause();
+		}
 		show_menu();
 		return 0;
 	}

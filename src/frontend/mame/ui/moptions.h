@@ -36,6 +36,7 @@
 #define OPTION_ICONS_PATH             "icons_directory"
 #define OPTION_COVER_PATH             "covers_directory"
 #define OPTION_UI_PATH                "ui_path"
+#define OPTION_SNAP_PATH              "snap_directory"
 
 // core misc options
 #define OPTION_SYSTEM_NAMES           "system_names"
@@ -108,6 +109,7 @@ public:
 	const char *icons_directory() const { return value(OPTION_ICONS_PATH); }
 	const char *covers_directory() const { return value(OPTION_COVER_PATH); }
 	const char *ui_path() const { return value(OPTION_UI_PATH); }
+	const char *snap_directory() const { return value(OPTION_SNAP_PATH); }
 
 	// Misc options
 	const char *system_names() const { return value(OPTION_SYSTEM_NAMES); }

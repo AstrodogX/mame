@@ -41,6 +41,7 @@ const options_entry ui_options::s_option_entries[] =
 	{ OPTION_ICONS_PATH,                    "icons",                       option_type::MULTIPATH,  "path to ICOns image" },
 	{ OPTION_COVER_PATH,                    "covers",                      option_type::MULTIPATH,  "path to software cover image" },
 	{ OPTION_UI_PATH,                       "ui",                          option_type::MULTIPATH,  "path to UI files" },
+	{ OPTION_SNAP_PATH,                     "snap",                        option_type::MULTIPATH,  "path to downloaded snapshots" },
 
 	// misc options
 	{ nullptr,                              nullptr,    option_type::HEADER,      "UI MISC OPTIONS" },

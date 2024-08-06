@@ -79,7 +79,7 @@ enum
 
 std::tuple<char const *, char const *, char const *> const ARTS_INFO[] =
 {
-	{ "snap",       N_p("selmenu-artwork", "Snapshots"),       OPTION_SNAPSHOT_DIRECTORY },
+	{ "snap",       N_p("selmenu-artwork", "Snapshots"),       OPTION_SNAP_PATH },
 	{ "cabinet",    N_p("selmenu-artwork", "Cabinet"),         OPTION_CABINETS_PATH },
 	{ "cpanel",     N_p("selmenu-artwork", "Control Panel"),   OPTION_CPANELS_PATH },
 	{ "pcb",        N_p("selmenu-artwork", "PCB"),             OPTION_PCBS_PATH },
@@ -1563,18 +1563,18 @@ std::string menu_select_launch::get_arts_searchpath()
 
 	// get search path
 	std::string addpath;
-	if (m_image_view == SNAPSHOT_VIEW)
-	{
-		emu_options moptions;
-		searchstr = machine().options().value(std::get<2>(ARTS_INFO[m_image_view]));
-		addpath = moptions.value(std::get<2>(ARTS_INFO[m_image_view]));
-	}
-	else
-	{
+//	if (m_image_view == SNAPSHOT_VIEW)
+//	{
+//		emu_options moptions;
+//		searchstr = machine().options().value(std::get<2>(ARTS_INFO[m_image_view]));
+//		addpath = moptions.value(std::get<2>(ARTS_INFO[m_image_view]));
+//	}
+//	else
+//	{
 		ui_options moptions;
 		searchstr = ui().options().value(std::get<2>(ARTS_INFO[m_image_view]));
 		addpath = moptions.value(std::get<2>(ARTS_INFO[m_image_view]));
-	}
+//	}
 
 	std::string tmp(searchstr);
 	path_iterator path(tmp);
@@ -1916,6 +1916,13 @@ bool menu_select_launch::handle_keys(u32 flags, int &iptkey)
 		}
 	}
 
+	if (exclusive_input_pressed(iptkey, IPT_UI_QUIT, 0))
+	{
+		stack_pop();
+		machine().schedule_exit();
+		return false;
+	}
+
 	if (exclusive_input_pressed(iptkey, IPT_UI_CANCEL, 0))
 	{
 		if (m_ui_error)
@@ -1928,12 +1935,12 @@ bool menu_select_launch::handle_keys(u32 flags, int &iptkey)
 			m_search.clear();
 			reset(reset_options::REMEMBER_REF);
 		}
-		else if (is_special_main_menu())
-		{
-			// this is the root session menu, exit
-			stack_pop();
-			machine().schedule_exit();
-		}
+//		else if (is_special_main_menu())
+//		{
+//			// this is the root session menu, exit
+//			stack_pop();
+//			machine().schedule_exit();
+//		}
 		return false;
 	}
 

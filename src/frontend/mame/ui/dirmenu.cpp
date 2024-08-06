@@ -67,7 +67,8 @@ const folders_entry f_folders[] =
 	{ N_p("path-option", "Logos"),              OPTION_LOGOS_PATH         },
 	{ N_p("path-option", "Scores"),             OPTION_SCORES_PATH        },
 	{ N_p("path-option", "Versus"),             OPTION_VERSUS_PATH        },
-	{ N_p("path-option", "Covers"),             OPTION_COVER_PATH         }
+	{ N_p("path-option", "Covers"),             OPTION_COVER_PATH         },
+	{ N_p("path-option", "Downloaded Snapshots"),OPTION_SNAP_PATH         }
 };
 
 

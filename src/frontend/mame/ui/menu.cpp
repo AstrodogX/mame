@@ -280,6 +280,10 @@ uint32_t menu::global_state::ui_handler(render_container &container)
 			m_pointer_y = -1.0F;
 			m_pointer_hit = false;
 
+			if (m_ui.machine().paused()) {
+				m_ui.machine().resume();
+			}
+
 			return mame_ui_manager::HANDLER_CANCEL;
 		}
 
