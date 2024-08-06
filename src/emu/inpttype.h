@@ -300,6 +300,8 @@ enum ioport_type : osd::u32
 		IPT_UI_EXPORT,
 		IPT_UI_AUDIT,
 
+		IPT_UI_QUIT,
+
 		// additional OSD-specified UI port types (up to 16)
 		IPT_OSD_1,
 		IPT_OSD_2,

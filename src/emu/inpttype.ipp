@@ -925,6 +925,7 @@ namespace {
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,       UI_FAVORITES,         N_p("input-name", "UI Add/Remove Favorite"), input_seq(KEYCODE_LALT, KEYCODE_F) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,       UI_EXPORT,            N_p("input-name", "UI Export List"),         input_seq(KEYCODE_LALT, KEYCODE_E) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,       UI_AUDIT,             N_p("input-name", "UI Audit Media"),         input_seq(KEYCODE_F1, input_seq::not_code, KEYCODE_LSHIFT, input_seq::not_code, KEYCODE_RSHIFT) ) \
+    INPUT_PORT_DIGITAL_TYPE( 0, UI,       UI_QUIT,              N_p("input-name", "Quit"),                   input_seq() ) \
 		CORE_INPUT_TYPES_END()
 
 #define CORE_INPUT_TYPES_OSD \

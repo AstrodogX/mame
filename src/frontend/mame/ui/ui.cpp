@@ -617,12 +617,15 @@ void mame_ui_manager::display_startup_screens(bool first_time)
 			// draw a standard message window
 			draw_text_box(container, warning_text, ui::text_layout::text_justify::LEFT, 0.5f, 0.5f, warning_color);
 
-			if (machine().ui_input().pressed(IPT_UI_CANCEL))
-			{
-				// if the user cancels, exit out completely
-				machine().schedule_exit();
-				return HANDLER_CANCEL;
+			if (machine().ui_input().pressed(IPT_UI_QUIT)) {
+				request_quit();
 			}
+//			else if (machine().ui_input().pressed(IPT_UI_CANCEL))
+//			{
+//				// if the user cancels, exit out completely
+//				machine().schedule_exit();
+//				return HANDLER_CANCEL;
+//			}
 			else if (machine().ui_input().pressed(IPT_UI_MENU))
 			{
 				config_menu = true;
