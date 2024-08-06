@@ -370,6 +370,9 @@ bool menu_video_options::handle(event const *ev)
 						timeout -= remainder.count() ? remainder : increment;
 						ui().set_pointer_activity_timeout(m_target.index(), timeout);
 						changed = true;
+
+						if (!timeout.count())
+							machine().popmessage(_("Clickable artwork is still active when pointer is hidden."));
 					}
 				}
 				break;
@@ -398,12 +401,6 @@ bool menu_video_options::handle(event const *ev)
 			// toggle hide after delay
 			case IPT_UI_SELECT:
 				ui().set_hide_inactive_pointers(m_target.index(), !ui().hide_inactive_pointers(m_target.index()));
-				changed = true;
-				break;
-
-			// restore default
-			case IPT_UI_CLEAR:
-				ui().reset_pointer_options(m_target.index());
 				changed = true;
 				break;
 			}
