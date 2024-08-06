@@ -84,6 +84,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_SNAPBILINEAR,                               "1",         core_options::option_type::BOOLEAN,    "specify if the snapshot/movie should have bilinear filtering applied" },
 	{ OPTION_STATENAME,                                  "%g",        core_options::option_type::STRING,     "override of the default state subfolder naming; %g == gamename" },
 	{ OPTION_BURNIN,                                     "0",         core_options::option_type::BOOLEAN,    "create burn-in snapshots for each screen" },
+	{ OPTION_SHORT_STATE_MESSAGE,                        "0",         core_options::option_type::BOOLEAN,    "show short messages and only when saving" },
 
 	// performance options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE PERFORMANCE OPTIONS" },

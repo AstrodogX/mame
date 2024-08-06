@@ -78,6 +78,7 @@ std::vector<submenu::option> submenu::advanced_options()
 			{ option_type::EMU,  N_("Rewind capacity"),                         OPTION_REWIND_CAPACITY },
 			{ option_type::EMU,  N_("Bilinear filtering for snapshots"),        OPTION_SNAPBILINEAR },
 			{ option_type::EMU,  N_("Burn-in"),                                 OPTION_BURNIN },
+			{ option_type::EMU,  N_("Short messages when saving"),              OPTION_SHORT_STATE_MESSAGE },
 
 			{ option_type::HEAD, N_("Input Options") },
 			{ option_type::EMU,  N_("Coin lockout"),                            OPTION_COIN_LOCKOUT },

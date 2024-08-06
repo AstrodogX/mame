@@ -66,6 +66,7 @@
 #define OPTION_SNAPBILINEAR         "snapbilinear"
 #define OPTION_STATENAME            "statename"
 #define OPTION_BURNIN               "burnin"
+#define OPTION_SHORT_STATE_MESSAGE  "short_state_message"
 
 // core performance options
 #define OPTION_AUTOFRAMESKIP        "autoframeskip"
@@ -352,6 +353,7 @@ public:
 	bool snap_bilinear() const { return bool_value(OPTION_SNAPBILINEAR); }
 	const char *state_name() const { return value(OPTION_STATENAME); }
 	bool burnin() const { return bool_value(OPTION_BURNIN); }
+	bool short_state_message() const { return bool_value(OPTION_SHORT_STATE_MESSAGE); }
 
 	// core performance options
 	bool auto_frameskip() const { return bool_value(OPTION_AUTOFRAMESKIP); }
